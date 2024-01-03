@@ -12,7 +12,8 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest"
+		"test:unit": "vitest",
+		"deployprod": "git checkout prod && git pull && git merge main && git push && git checkout main"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
