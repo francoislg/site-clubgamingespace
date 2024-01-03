@@ -3,7 +3,7 @@
 	import Icon from '$lib/Icon.svelte';
 </script>
 
-<div class="pointer-events-none opacity-45">
+<div class="pointer-events-none opacity-45 z-0">
 	<Popup origin={{ x: -20, y: -40 }} class="left-[2px] top-[200px]">
 		<Icon name="gamepad" />
 	</Popup>
