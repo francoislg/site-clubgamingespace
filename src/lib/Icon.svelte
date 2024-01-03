@@ -11,7 +11,7 @@
 	/** @type {Map<IconName, string>} */
 	const map = {
 		external: 'fa-solid fa-arrow-up-right-from-square',
-		map: 'fa-solid fa-globe',
+		map: 'fa-regular fa-map',
 		gamepad: 'fa-solid fa-gamepad',
 		vr: 'fa-solid fa-vr-cardboard',
 		email: 'fa-regular fa-envelope',

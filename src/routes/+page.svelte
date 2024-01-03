@@ -7,6 +7,10 @@
 	import Footer from './Footer.svelte';
 </script>
 
+<svelte:head>
+	<title>Club de Gaming de L'Espace</title>
+</svelte:head>
+
 <div class="flex flex-col items-center gap-4">
 	<h1 class="text-center {sHeaders.h1()}">Club de Gaming de L'Espace</h1>
 
@@ -31,7 +35,7 @@
 				{/snippet}
 				{#snippet texte()}
 					Ce sondage a pour but de récolter de l'information sur les participants. Inscrivez-vous
-					ici pour recevoir des communications lorsque l'activité commencera.
+					ici pour recevoir des communications lorsque l'activité récurrente commencera.
 				{/snippet}
 			</Inscription>
 			<Inscription
