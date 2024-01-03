@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'YosterIsland';
+	src: url(/YosterIslandRegular-VqMe.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'RenegadePursuit';
+	src: url(/RenegadePursuit-ywMr5.ttf) format('truetype');
+}
+
+@layer base {
+	h1 {
+		font-family: 'YosterIsland', system-ui, sans-serif;
+	}
+	h3 {
+		font-family: 'RenegadePursuit', system-ui, sans-serif;
+	}
+	html {
+		font-family: 'Arial', system-ui, sans-serif;
+	}
+}
