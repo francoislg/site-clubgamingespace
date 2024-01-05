@@ -3,8 +3,8 @@
 	import { sHeaders } from '../lib/styles/headers.js';
 	import Inscription from '../lib/Inscription.svelte';
 	import Icon from '../lib/Icon.svelte';
-	import TextWithInlineIcon from '$lib/TextWithInlineIcon.svelte';
 	import Footer from './Footer.svelte';
+	import Link from '$lib/Link.svelte';
 </script>
 
 <svelte:head>
@@ -14,18 +14,16 @@
 <div class="flex flex-col items-center gap-4">
 	<h1 class="text-center {sHeaders.h1()}">Club de Gaming de L'Espace</h1>
 
-	<div class="text-center">
-		<Icon name="map" />
-		Situé à la
-		<a href="https://maps.app.goo.gl/K7TyigiHTsHwM2xd7" target="_blank">
-			<TextWithInlineIcon icon="external">
-				<span class="underline">Bibliothèque de Dolbeau</span>
-			</TextWithInlineIcon>
-		</a>
+	<div class="text-center flex flex-col items-center gap-2">
+		<img class="inline-block" src="/map.png" width={64} height={64} alt="carte" />
+		<div>
+			Situé à la
+			<Link href="https://maps.app.goo.gl/K7TyigiHTsHwM2xd7">Bibliothèque de Dolbeau</Link>
+		</div>
 	</div>
 
 	<div
-		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-green-200/50 w-full"
+		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-gray-100/90 w-full"
 	>
 		<h3 class="{sHeaders.h3()} p-4 text-center">Inscriptions</h3>
 		<div class="flex flex-col w-full items-center gap-2">

@@ -1,7 +1,6 @@
 <script lang="ts">
-	import Icon from '$lib/Icon.svelte';
+	import Link from '$lib/Link.svelte';
 	import { screenThreshold } from '$lib/actions/screenThreshold';
-	import { sButton } from '$lib/styles/button';
 
 	let met = $state(false);
 
@@ -21,8 +20,6 @@
 	/>
 
 	<div class="h-auto opacity-0 transition-opacity duration-1000 delay-500" class:opacity-100={met}>
-		<a href="mailto:clubgamingespace@gmail.com" class={sButton()}>
-			Nous contacter par courriel<Icon name="email" />
-		</a>
+		<Link href="mailto:clubgamingespace@gmail.com" icon="email">Nous contacter par courriel</Link>
 	</div>
 </div>

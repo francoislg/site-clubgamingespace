@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { sButton } from '$lib/styles/button';
-	import Icon from './Icon.svelte';
+	import Link from './Link.svelte';
 	let open = $state(false);
 
 	function toggle() {
@@ -8,19 +8,16 @@
 	}
 </script>
 
-<div class="flex gap-4 justify-center">
+<div class="flex flex-col gap-4 justify-center">
 	<button class={sButton()} on:click={toggle}>
 		{open ? 'Fermer' : 'Ouvrir'} le calendrier complet
 	</button>
 
-	<a
-		class={sButton()}
-		target="_blank"
+	<Link
 		href="https://calendar.google.com/calendar/u/0?cid=ZjY3NGJlOWRiODc4YmE1NTBjNzJkZWRiYTk5NThmMjExNjU1ZDNiY2FiZmIwMDg0NGMxYTg5ZDViMjZiMWRjYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
 	>
 		Ajouter notre calendrier au vôtre
-		<Icon name="external" />
-	</a>
+	</Link>
 </div>
 
 <div class="w-full max-h-[600px] transition-[max-height] overflow-hidden" class:!max-h-0={!open}>
