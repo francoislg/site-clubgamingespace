@@ -14,14 +14,6 @@
 <div class="flex flex-col items-center gap-4">
 	<h1 class="text-center {sHeaders.h1()}">Club de Gaming de L'Espace</h1>
 
-	<div class="text-center flex flex-col items-center gap-2">
-		<img class="inline-block" src="/map.png" width={64} height={64} alt="carte" />
-		<div>
-			Situé à la
-			<Link href="https://maps.app.goo.gl/K7TyigiHTsHwM2xd7">Bibliothèque de Dolbeau</Link>
-		</div>
-	</div>
-
 	<div
 		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-gray-100/90 w-full"
 	>
@@ -51,5 +43,15 @@
 		</div>
 	</div>
 	<Calendrier />
+	<div class="text-center flex flex-col items-center gap-2">
+		<img class="inline-block" src="/map.png" width={64} height={64} alt="carte" />
+		<div>
+			Situé à la Bibliothère de Dolbeau, au
+			<Link href="https://maps.app.goo.gl/K7TyigiHTsHwM2xd7">
+				175 4e Av, Dolbeau-Mistassini, QC G8L 1W6
+			</Link>
+		</div>
+		<img class="inline-block" src="/bibli.png" alt="carte" />
+	</div>
 	<Footer />
 </div>
