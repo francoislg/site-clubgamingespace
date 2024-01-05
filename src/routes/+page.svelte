@@ -4,16 +4,19 @@
 	import Inscription from '../lib/Inscription.svelte';
 	import Footer from './Footer.svelte';
 	import Link from '$lib/Link.svelte';
+	import { page } from '$app/stores';
 </script>
 
 <svelte:head>
 	<title>Club de Gaming de L'Espace</title>
-	<meta property="og:title" content="Club de Gaming de L'Espace" />
+	<meta property="og:title" content="Site du Club de Gaming de L'Espace" />
 	<meta
 		property="og:description"
 		content="Site d'information pour Club de Gaming de L'Espace, à la bibliothèque de Dolbeau"
 	/>
-	<meta property="og:image" content="/favicon.png" />
+	<meta property="og:image" content="{$page.url.origin}/banniere.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 </svelte:head>
 
 <div class="flex flex-col items-center gap-4">
