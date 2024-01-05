@@ -23,7 +23,7 @@
 </script>
 
 {#if !dateLimite || dateLimite > plusTard}
-	<div class="flex flex-col gap-2 bg-green-300/50 rounded-lg p-4 w-full">
+	<div class="flex flex-col gap-2 bg-green-100 rounded-lg p-4 w-full">
 		<h4 class={sHeaders.h4()}>{@render title()}</h4>
 		<button class="inline sm:hidden {sButton()}" on:click={toggleHidden}>
 			{hidden ? 'Voir' : 'Cacher'} les détails</button

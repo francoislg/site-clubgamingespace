@@ -15,7 +15,7 @@
 	<h1 class="text-center {sHeaders.h1()}">Club de Gaming de L'Espace</h1>
 
 	<div
-		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-gray-100/90 w-full"
+		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
 	>
 		<h3 class="{sHeaders.h3()} p-4 text-center">Inscriptions</h3>
 		<div class="flex flex-col w-full items-center gap-2">
