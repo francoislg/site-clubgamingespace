@@ -2,13 +2,18 @@
 	import Calendrier from '$lib/Calendrier.svelte';
 	import { sHeaders } from '../lib/styles/headers.js';
 	import Inscription from '../lib/Inscription.svelte';
-	import Icon from '../lib/Icon.svelte';
 	import Footer from './Footer.svelte';
 	import Link from '$lib/Link.svelte';
 </script>
 
 <svelte:head>
 	<title>Club de Gaming de L'Espace</title>
+	<meta property="og:title" content="Club de Gaming de L'Espace" />
+	<meta
+		property="og:description"
+		content="Site d'information pour Club de Gaming de L'Espace, à la bibliothèque de Dolbeau"
+	/>
+	<meta property="og:image" content="/favicon.png" />
 </svelte:head>
 
 <div class="flex flex-col items-center gap-4">
