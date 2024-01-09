@@ -20,16 +20,44 @@
 	function toggleHidden() {
 		hidden = !hidden;
 	}
+
+	function formatDate(date: Date) {
+		const mois = [
+			'janvier',
+			'février',
+			'mars',
+			'avril',
+			'mai',
+			'juin',
+			'juillet',
+			'août',
+			'septembre',
+			'octobre',
+			'novembre',
+			'décembre'
+		];
+		return `${date.getDate()} ${mois[date.getMonth()]}`;
+	}
 </script>
 
 {#if !dateLimite || dateLimite > plusTard}
 	<div class="flex flex-col gap-2 bg-green-100 rounded-lg p-4 w-full">
-		<h4 class={sHeaders.h4()}>{@render title()}</h4>
+		<div class="flex justify-between">
+			<h4 class={sHeaders.h4()}>{@render title()}</h4>
+			{#if dateLimite}
+				<div class="hidden sm:block">Limite: {formatDate(dateLimite)}</div>
+			{/if}
+		</div>
 		<button class="inline sm:hidden {sButton()}" on:click={toggleHidden}>
 			{hidden ? 'Voir' : 'Cacher'} les détails</button
 		>
-		<div class:hidden class="sm:block">
-			{@render texte()}
+		<div class:hidden class="sm:block flex flex-col">
+			{#if dateLimite}
+				<div class="inline sm:hidden">Limite: {formatDate(dateLimite)}</div>
+			{/if}
+			<div>
+				{@render texte()}
+			</div>
 		</div>
 		<div class="text-center">
 			{#if !dateLimite || dateLimite > maintenant}

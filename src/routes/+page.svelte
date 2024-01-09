@@ -27,7 +27,7 @@
 	>
 		<h3 class="{sHeaders.h3()} p-4 text-center">Soirée de Gaming</h3>
 		<div>
-			La soirée récurrente commence le Jeudi 18 janvier de 19h à 21h, et aura lieu 1 Jeudi par 2
+			La soirée récurrente commence le jeudi 18 janvier de 19h à 21h, et aura lieu 1 jeudi par 2
 			semaines.
 		</div>
 		<div>L'activité sera: <u> Jeux libres sur Nintendo Switch </u></div>
