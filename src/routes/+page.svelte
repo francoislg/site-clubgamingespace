@@ -25,6 +25,21 @@
 	<div
 		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
 	>
+		<h3 class="{sHeaders.h3()} p-4 text-center">Soirée de Gaming</h3>
+		<div>
+			La soirée récurrente commence le Jeudi 18 janvier de 19h à 21h, et aura lieu 1 Jeudi par 2
+			semaines.
+		</div>
+		<div>L'activité sera: <u> Jeux libres sur Nintendo Switch </u></div>
+		<div>
+			Il y aura une Nintendo Switch de disponible et quelques manettes, mais amenez quand même votre
+			équipement!
+		</div>
+	</div>
+
+	<div
+		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
+	>
 		<h3 class="{sHeaders.h3()} p-4 text-center">Inscriptions</h3>
 		<div class="flex flex-col w-full items-center gap-2">
 			<Inscription lien="https://forms.gle/umPSqusmS3XmeMwy5">
