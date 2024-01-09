@@ -71,7 +71,9 @@
 		<div>
 			Situé à la Bibliothère de Dolbeau, au
 			<Link href="https://maps.app.goo.gl/K7TyigiHTsHwM2xd7">
-				175 4e Av, Dolbeau-Mistassini, QC G8L 1W6
+				<span class="whitespace-nowrap"> 175 4e Av, </span>
+				<span class="whitespace-nowrap"> Dolbeau-Mistassini, </span>
+				<span class="whitespace-nowrap"> QC G8L 1W6 </span>
 			</Link>
 		</div>
 		<img class="inline-block" src="/bibli.png" alt="carte" />
