@@ -25,15 +25,49 @@
 	<div
 		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
 	>
-		<h3 class="{sHeaders.h3()} p-4 text-center">Soirée de Gaming</h3>
-		<div>
-			La soirée récurrente commence le jeudi 18 janvier de 19h à 21h, et aura lieu 1 jeudi par 2
-			semaines.
+		<h3 class="{sHeaders.h3()} p-4 text-center">Information</h3>
+		<div class="flex flex-col gap-2">
+			<p>
+				Le Club de Gaming de L'Espace a pour but regrouper les gamers de Dolbeau-Mistassini autour
+				d'activités de gaming. Il organisera:
+			</p>
+			<ul class="list-disc list-inside">
+				<li>
+					Des soirées récurrentes "portes ouvertes" dont l'activité changera de semaine en semaine.
+				</li>
+				<li>
+					Des activités spéciales qui demanderont une inscription (tel l'atelier d'Introduction à la
+					Réalité Virtuelle), à l'occasion.
+				</li>
+			</ul>
+			<p>
+				Le club est ouvert aux 13 ans et plus. Suivez le <a class="underline" href="#calendrier"
+					>calendrier</a
+				> pour voir ce qui vous intéresse.
+			</p>
+			<p>
+				Si vous avez des idées ou voulez organiser une activité à ajouter au calendrier, vous pouvez <Link
+					href="mailto:clubgamingespace@gmail.com"
+					icon="email">contacter le club ici</Link
+				>.
+			</p>
 		</div>
-		<div>L'activité sera: <u> Jeux libres sur Nintendo Switch </u></div>
-		<div>
-			Il y aura une Nintendo Switch de disponible et quelques manettes, mais amenez quand même votre
-			équipement!
+	</div>
+
+	<div
+		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
+	>
+		<h3 class="{sHeaders.h3()} p-4 text-center">Soirée de Gaming</h3>
+		<div class="flex flex-col gap-2">
+			<p>
+				La soirée récurrente commence le jeudi 18 janvier de 19h à 21h, et aura lieu 1 jeudi par 2
+				semaines.
+			</p>
+			<p>L'activité sera: <u> Jeux libres sur Nintendo Switch </u></p>
+			<p>
+				Il y aura une Nintendo Switch de disponible et quelques manettes, mais amenez quand même
+				votre équipement!
+			</p>
 		</div>
 	</div>
 
@@ -47,8 +81,8 @@
 					Sondage de direction pour le club
 				{/snippet}
 				{#snippet texte()}
-					Ce sondage a pour but de récolter de l'information sur les participants. Inscrivez-vous
-					ici pour recevoir des communications lorsque l'activité récurrente commencera.
+					Ce sondage a pour but de récolter de l'information sur les participants. C'est ici que
+					vous pouvez suggérer des activités, et aussi pour recevoir des communications par le club.
 				{/snippet}
 			</Inscription>
 			<Inscription
