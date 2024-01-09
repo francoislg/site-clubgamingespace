@@ -33,11 +33,11 @@
 			</p>
 			<ul class="list-disc list-inside">
 				<li>
-					Des soirées récurrentes "portes ouvertes" dont l'activité changera de semaine en semaine.
+					Des soirées récurrentes «portes ouvertes» dont l'activité changera de semaine en semaine.
 				</li>
 				<li>
-					Des activités spéciales qui demanderont une inscription (tel l'atelier d'Introduction à la
-					Réalité Virtuelle), à l'occasion.
+					Des activités spéciales qui demanderont une inscription (comme l'atelier d'Introduction à
+					la Réalité Virtuelle), à l'occasion.
 				</li>
 			</ul>
 			<p>
