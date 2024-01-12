@@ -25,7 +25,7 @@
 
 	<WarningBanner>
 		{#snippet warning()}
-			L'activité de réalité virtuelle du 13 janvier a été reporté au 27 janvier dû à la tempête
+			L'activité de réalité virtuelle du 13 janvier a été reportée au 27 janvier dû à la tempête
 		{/snippet}
 	</WarningBanner>
 
