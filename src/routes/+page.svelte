@@ -5,6 +5,7 @@
 	import Footer from './Footer.svelte';
 	import Link from '$lib/Link.svelte';
 	import { page } from '$app/stores';
+	import WarningBanner from '$lib/WarningBanner.svelte';
 </script>
 
 <svelte:head>
@@ -21,6 +22,12 @@
 
 <div class="flex flex-col items-center gap-4">
 	<h1 class="text-center {sHeaders.h1()}">Club de Gaming de L'Espace</h1>
+
+	<WarningBanner>
+		{#snippet warning()}
+			L'activité de réalité virtuelle du 13 janvier a été reportée au 27 janvier dû à la tempête
+		{/snippet}
+	</WarningBanner>
 
 	<div
 		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
@@ -86,11 +93,14 @@
 				{/snippet}
 			</Inscription>
 			<Inscription
-				dateLimite={new Date('2024-01-12 12:00:00')}
+				dateLimite={new Date('2024-01-26 12:00:00')}
 				lien="https://forms.gle/fsg7ZkeFXg64HwHs9"
 			>
 				{#snippet title()}
 					Introduction à la réalité virtuelle
+				{/snippet}
+				{#snippet warning()}
+					L'activité a été reportée au 27 janvier dû à la tempête
 				{/snippet}
 				{#snippet texte()}
 					Cette activité vous permettra de vous familiariser avec la réalité virtuelle.

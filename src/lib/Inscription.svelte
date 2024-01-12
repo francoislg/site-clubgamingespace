@@ -4,16 +4,17 @@
 	import type { Snippet } from 'svelte';
 	import Link from './Link.svelte';
 
-	let { lien, dateLimite, texte, title } = $props<{
+	let { lien, dateLimite, texte, title, warning } = $props<{
 		lien: string;
 		dateLimite?: Date;
 		texte: Snippet;
 		title: Snippet;
+		warning?: Snippet;
 	}>();
 
 	const maintenant = new Date();
-	const unJour = 60 * 1000 * 60 * 24;
-	const plusTard = new Date(Date.now() + unJour * 3);
+	const UN_JOUR = 60 * 1000 * 60 * 24;
+	const troisJours = new Date(maintenant.valueOf() - UN_JOUR * 3);
 
 	let hidden = $state(true);
 
@@ -38,31 +39,38 @@
 		];
 		return `${date.getDate()} ${mois[date.getMonth()]}`;
 	}
+
+	let shouldDisplay = $derived(!dateLimite || dateLimite > troisJours);
 </script>
 
-<div class="flex flex-col gap-2 bg-green-100 rounded-lg p-4 w-full">
-	<div class="flex justify-between">
-		<h4 class={sHeaders.h4()}>{@render title()}</h4>
-		{#if dateLimite}
-			<div class="hidden sm:block">Limite: {formatDate(dateLimite)}</div>
+{#if shouldDisplay}
+	<div class="flex flex-col gap-2 bg-green-100 rounded-lg p-4 w-full">
+		<div class="flex justify-between">
+			<h4 class={sHeaders.h4()}>{@render title()}</h4>
+			{#if dateLimite}
+				<div class="hidden sm:block">Limite: {formatDate(dateLimite)}</div>
+			{/if}
+		</div>
+		{#if warning}
+			<div class="text-center font-bold">⚠️ {@render warning()} ⚠️</div>
 		{/if}
-	</div>
-	<button class="inline sm:hidden {sButton()}" on:click={toggleHidden}>
-		{hidden ? 'Voir' : 'Cacher'} les détails</button
-	>
-	<div class:hidden class="sm:block flex flex-col">
-		{#if dateLimite}
-			<div class="inline sm:hidden">Limite: {formatDate(dateLimite)}</div>
-		{/if}
-		<div>
-			{@render texte()}
+		<button class="inline sm:hidden {sButton()}" on:click={toggleHidden}>
+			{hidden ? 'Voir' : 'Cacher'} les détails</button
+		>
+		<div class:hidden class="sm:block flex flex-col">
+			{#if dateLimite}
+				<div class="inline sm:hidden">Limite: {formatDate(dateLimite)}</div>
+			{/if}
+			<div>
+				{@render texte()}
+			</div>
+		</div>
+		<div class="text-center">
+			{#if !dateLimite || maintenant < dateLimite}
+				<Link href={lien}>Inscription ici</Link>
+			{:else}
+				<div class="text-center">Inscription terminée</div>
+			{/if}
 		</div>
 	</div>
-	<div class="text-center">
-		{#if !dateLimite || dateLimite > maintenant}
-			<Link href={lien}>Inscription ici</Link>
-		{:else}
-			<div class="text-center">Inscription terminée</div>
-		{/if}
-	</div>
-</div>
+{/if}
