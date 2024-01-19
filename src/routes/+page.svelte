@@ -66,14 +66,14 @@
 	>
 		<h3 class="{sHeaders.h3()} p-4 text-center">Soirée de Gaming</h3>
 		<div class="flex flex-col gap-2">
+			<p>La prochaine soirée sera le <strong>jeudi 1 février</strong>, de 19h à 21h.</p>
+			<p>L'activité sera: <u> Rocket League, en 1v1 ou 2v2</u> ⚽🏎️</p>
 			<p>
-				La soirée récurrente commence le jeudi 18 janvier de 19h à 21h, et aura lieu 1 jeudi par 2
-				semaines.
+				Il y aura une Steam Deck et une Nintendo Switch pour jouer en écran partagé. Vous pouvez
+				amenez votre équipement.
 			</p>
-			<p>L'activité sera: <u> Jeux libres sur Nintendo Switch </u></p>
-			<p>
-				Il y aura une Nintendo Switch de disponible et quelques manettes, mais amenez quand même
-				votre équipement!
+			<p class="text-sm">
+				📅 À noter que l'activité aura lieu 1 semaine sur 2, le jeudi, de 19h à 21h.
 			</p>
 		</div>
 	</div>
