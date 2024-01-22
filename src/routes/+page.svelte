@@ -6,6 +6,11 @@
 	import Link from '$lib/Link.svelte';
 	import { page } from '$app/stores';
 	import WarningBanner from '$lib/WarningBanner.svelte';
+	import Vote from '$lib/Vote.svelte';
+	import type { ActionData } from './$types.js';
+	import { URLs } from '$lib/urls.js';
+
+	export let form: ActionData;
 </script>
 
 <svelte:head>
@@ -58,6 +63,14 @@
 					icon="email">contacter le club ici</Link
 				>.
 			</p>
+			<p>
+				<a class="text-green-900" href={URLs.discord()}>
+					<i class="fa-discord fa-brands fa-2xl"></i>
+				</a>
+				Rejoignez aussi le
+				<a class="underline" href={URLs.discord()}>serveur Discord</a>
+				pour discuter des prochaines activités, ou juste jouer en groupe.
+			</p>
 		</div>
 	</div>
 
@@ -75,6 +88,20 @@
 			<p class="text-sm">
 				📅 À noter que l'activité aura lieu 1 semaine sur 2, le jeudi, de 19h à 21h.
 			</p>
+		</div>
+	</div>
+
+	<div
+		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
+	>
+		<h3 class="{sHeaders.h3()} p-4 text-center">Soirée de Gaming à venir</h3>
+		<div class="flex flex-col gap-2">
+			<p>Vous pouvez voter pour la prochaine activité du <strong>15 février</strong> ici</p>
+			<Vote
+				voteFor="15fev"
+				choices={['Mario Kart 8', 'Super Smash Bros Ultimate Compétitif 1v1']}
+				votedFor={form?.votedFor?.toString()}
+			></Vote>
 		</div>
 	</div>
 
