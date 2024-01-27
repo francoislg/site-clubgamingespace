@@ -120,7 +120,7 @@
 				{/snippet}
 			</Inscription>
 			<Inscription
-				dateLimite={new Date('2024-01-26 12:00:00')}
+				dateLimite={new Date('2024-01-27 12:00:00')}
 				lien="https://forms.gle/fsg7ZkeFXg64HwHs9"
 			>
 				{#snippet title()}
