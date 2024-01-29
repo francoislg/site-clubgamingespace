@@ -5,7 +5,6 @@
 	import Footer from './Footer.svelte';
 	import Link from '$lib/Link.svelte';
 	import { page } from '$app/stores';
-	import WarningBanner from '$lib/WarningBanner.svelte';
 	import Vote from '$lib/Vote.svelte';
 	import type { ActionData } from './$types.js';
 	import { URLs } from '$lib/urls.js';
@@ -28,11 +27,11 @@
 <div class="flex flex-col items-center gap-4">
 	<h1 class="text-center {sHeaders.h1()}">Club de Gaming de L'Espace</h1>
 
-	<WarningBanner>
+	<!-- <WarningBanner>
 		{#snippet warning()}
 			L'activité de réalité virtuelle du 13 janvier a été reportée au 27 janvier dû à la tempête
 		{/snippet}
-	</WarningBanner>
+	</WarningBanner> -->
 
 	<div
 		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
@@ -117,21 +116,6 @@
 				{#snippet texte()}
 					Ce sondage a pour but de récolter de l'information sur les participants. C'est ici que
 					vous pouvez suggérer des activités, et aussi pour recevoir des communications par le club.
-				{/snippet}
-			</Inscription>
-			<Inscription
-				dateLimite={new Date('2024-01-27 12:00:00')}
-				lien="https://forms.gle/fsg7ZkeFXg64HwHs9"
-			>
-				{#snippet title()}
-					Introduction à la réalité virtuelle
-				{/snippet}
-				{#snippet warning()}
-					L'activité a été reportée au 27 janvier dû à la tempête
-				{/snippet}
-				{#snippet texte()}
-					Cette activité vous permettra de vous familiariser avec la réalité virtuelle.
-					Inscrivez-vous pour avoir une séance de 30 minutes et essayer différents jeux.
 				{/snippet}
 			</Inscription>
 		</div>
