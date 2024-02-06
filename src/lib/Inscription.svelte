@@ -3,6 +3,7 @@
 	import { sButton } from './styles/button';
 	import type { Snippet } from 'svelte';
 	import Link from './Link.svelte';
+	import { maintenant } from './date';
 
 	let { lien, dateLimite, texte, title, warning } = $props<{
 		lien: string;
@@ -11,10 +12,6 @@
 		title: Snippet;
 		warning?: Snippet;
 	}>();
-
-	const maintenant = new Date();
-	const UN_JOUR = 60 * 1000 * 60 * 24;
-	const troisJours = new Date(maintenant.valueOf() - UN_JOUR * 3);
 
 	let hidden = $state(true);
 
@@ -40,7 +37,11 @@
 		return `${date.getDate()} ${mois[date.getMonth()]}`;
 	}
 
-	let shouldDisplay = $derived(!dateLimite || dateLimite > troisJours);
+	let shouldDisplay = $derived(!dateLimite || avantTroisJours(dateLimite));
+
+	function avantTroisJours(dateLimite: Date): any {
+		throw new Error('Function not implemented.');
+	}
 </script>
 
 {#if shouldDisplay}

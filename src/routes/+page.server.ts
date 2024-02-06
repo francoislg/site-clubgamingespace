@@ -17,6 +17,6 @@ export const actions = {
 			return fail(400, {});
 		}
 
-		return { votedFor: choice };
+		return { votedFor: { [voteFor as string]: choice } };
 	}
 };
