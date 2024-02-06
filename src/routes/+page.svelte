@@ -8,6 +8,10 @@
 	import Vote from '$lib/Vote.svelte';
 	import type { ActionData } from './$types.js';
 	import { URLs } from '$lib/urls.js';
+	import Section from '$lib/Section.svelte';
+	import WarningBanner from '$lib/WarningBanner.svelte';
+	import { avantLeJourMeme } from '$lib/date.js';
+	import Suggestion from '$lib/Suggestion.svelte';
 
 	export let form: ActionData;
 </script>
@@ -27,17 +31,22 @@
 <div class="flex flex-col items-center gap-4">
 	<h1 class="text-center {sHeaders.h1()}">Club de Gaming de L'Espace</h1>
 
-	<!-- <WarningBanner>
+	<WarningBanner>
 		{#snippet warning()}
-			L'activité de réalité virtuelle du 13 janvier a été reportée au 27 janvier dû à la tempête
+			{#if avantLeJourMeme(new Date('2024-02-29 00:00:00'))}
+				L'activité du 29 février aura lieu exceptionnellement le *27 février*. Aussi, il n'y aura
+				pas de soirée le 14 mars.
+			{:else}
+				Il n'y aura exceptionnellement pas de soirée le 14 mars.
+			{/if}
 		{/snippet}
-	</WarningBanner> -->
+	</WarningBanner>
 
-	<div
-		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
-	>
-		<h3 class="{sHeaders.h3()} p-4 text-center">Information</h3>
-		<div class="flex flex-col gap-2">
+	<Section>
+		{#snippet title()}
+			Information
+		{/snippet}
+		{#snippet children()}
 			<p>
 				Le Club de Gaming de L'Espace a pour but regrouper les gamers de Dolbeau-Mistassini autour
 				d'activités de gaming. Il organisera:
@@ -70,45 +79,49 @@
 				<a class="underline" href={URLs.discord()}>serveur Discord</a>
 				pour discuter des prochaines activités, ou juste jouer en groupe.
 			</p>
-		</div>
-	</div>
+		{/snippet}
+	</Section>
 
-	<div
-		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
-	>
-		<h3 class="{sHeaders.h3()} p-4 text-center">Soirée de Gaming</h3>
-		<div class="flex flex-col gap-2">
-			<p>La prochaine soirée sera le <strong>jeudi 1 février</strong>, de 19h à 21h.</p>
-			<p>L'activité sera: <u> Rocket League, en 1v1 ou 2v2</u> ⚽🏎️</p>
+	<Section>
+		{#snippet title()}
+			Soirée de Gaming
+		{/snippet}
+		{#snippet children()}
+			<p>La prochaine soirée sera le <strong>jeudi 15 février</strong>, de 18h30 à 21h.</p>
+			<p>
+				L'activité est encore en vote (voir plus bas)
+				<!-- <u> Rocket League, en 1v1 ou 2v2</u> ⚽🏎️ -->
+			</p>
 			<p>
 				Il y aura une Steam Deck et une Nintendo Switch pour jouer en écran partagé. Vous pouvez
 				amenez votre équipement.
 			</p>
 			<p class="text-sm">
-				📅 À noter que l'activité aura lieu 1 semaine sur 2, le jeudi, de 19h à 21h.
+				📅 À noter que l'activité aura lieu 1 semaine sur 2, le jeudi, de 18h30 à 21h.
 			</p>
-		</div>
-	</div>
-
-	<div
-		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
-	>
-		<h3 class="{sHeaders.h3()} p-4 text-center">Soirée de Gaming à venir</h3>
-		<div class="flex flex-col gap-2">
-			<p>Vous pouvez voter pour la prochaine activité du <strong>15 février</strong> ici</p>
 			<Vote
 				voteFor="15fev"
 				choices={['Mario Kart 8', 'Super Smash Bros Ultimate Compétitif 1v1']}
-				votedFor={form?.votedFor?.toString()}
+				votedFor={form?.votedFor?.['15fev']?.toString()}
 			></Vote>
-		</div>
-	</div>
+		{/snippet}
+	</Section>
 
-	<div
-		class="flex-flex-col justify-center border-2 rounded-lg border-green-200 p-4 bg-white/90 w-full"
-	>
-		<h3 class="{sHeaders.h3()} p-4 text-center">Inscriptions</h3>
-		<div class="flex flex-col w-full items-center gap-2">
+	<Section>
+		{#snippet title()}
+			Soirée de Gaming à venir
+		{/snippet}
+		{#snippet children()}
+			<p>Vous pouvez suggérer une activité pour la prochaine activité</p>
+			<Suggestion votedFor={form?.votedFor?.['suggestion'].toString()} />
+		{/snippet}
+	</Section>
+
+	<Section>
+		{#snippet title()}
+			Inscriptions
+		{/snippet}
+		{#snippet children()}
 			<Inscription lien="https://forms.gle/umPSqusmS3XmeMwy5">
 				{#snippet title()}
 					Sondage de direction pour le club
@@ -118,9 +131,11 @@
 					vous pouvez suggérer des activités, et aussi pour recevoir des communications par le club.
 				{/snippet}
 			</Inscription>
-		</div>
-	</div>
+		{/snippet}
+	</Section>
+
 	<Calendrier />
+
 	<div class="text-center flex flex-col items-center gap-2">
 		<img class="inline-block" src="/map.png" width={64} height={64} alt="carte" />
 		<div>
