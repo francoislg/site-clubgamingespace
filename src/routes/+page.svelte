@@ -87,26 +87,19 @@
 			Soirée de Gaming
 		{/snippet}
 		{#snippet children()}
-			<p>La prochaine soirée sera le <strong>jeudi 15 février</strong>, de 18h30 à 21h.</p>
+			<p>La prochaine soirée sera le <strong>mardi 27 février</strong>, de 18h30 à 21h.</p>
+			<p>Vous pouvez suggérer une activité, ou venir sur place pour décider</p>
 			<p>
-				L'activité est encore en vote (voir plus bas)
-				<!-- <u> Rocket League, en 1v1 ou 2v2</u> ⚽🏎️ -->
-			</p>
-			<p>
-				Il y aura une Steam Deck et une Nintendo Switch pour jouer en écran partagé. Vous pouvez
-				amenez votre équipement.
+				Dans tous les cas, il y aura une Steam Deck et une Nintendo Switch. Vous pouvez amener votre
+				équipement
 			</p>
 			<p class="text-sm">
 				📅 À noter que l'activité aura lieu 1 semaine sur 2, le jeudi, de 18h30 à 21h.
 			</p>
-			<Vote
-				voteFor="15fev"
-				choices={['Mario Kart 8', 'Super Smash Bros Ultimate Compétitif 1v1']}
-				votedFor={form?.votedFor?.['15fev']?.toString()}
-			></Vote>
+			<Suggestion votedFor={form?.votedFor?.['suggestion'].toString()} />
 		{/snippet}
 	</Section>
-
+	<!-- 
 	<Section>
 		{#snippet title()}
 			Soirée de Gaming à venir
@@ -115,7 +108,7 @@
 			<p>Vous pouvez suggérer une activité pour la prochaine activité</p>
 			<Suggestion votedFor={form?.votedFor?.['suggestion'].toString()} />
 		{/snippet}
-	</Section>
+	</Section> -->
 
 	<Section>
 		{#snippet title()}
