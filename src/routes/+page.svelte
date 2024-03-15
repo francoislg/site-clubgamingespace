@@ -31,7 +31,7 @@
 <div class="flex flex-col items-center gap-4">
 	<h1 class="text-center {sHeaders.h1()}">Club de Gaming de L'Espace</h1>
 
-	<WarningBanner>
+	<!-- <WarningBanner>
 		{#snippet warning()}
 			{#if avantLeJourMeme(new Date('2024-02-29 00:00:00'))}
 				L'activité du 29 février aura lieu exceptionnellement le *27 février*. Aussi, il n'y aura
@@ -40,7 +40,7 @@
 				Il n'y aura exceptionnellement pas de soirée le 14 mars.
 			{/if}
 		{/snippet}
-	</WarningBanner>
+	</WarningBanner> -->
 
 	<Section>
 		{#snippet title()}
@@ -87,7 +87,7 @@
 			Soirée de Gaming
 		{/snippet}
 		{#snippet children()}
-			<p>La prochaine soirée sera le <strong>mardi 27 février</strong>, de 18h30 à 21h.</p>
+			<p>La prochaine soirée sera le <strong>jeudi 21 mars</strong>, de 18h30 à 21h.</p>
 			<p>Vous pouvez suggérer une activité, ou venir sur place pour décider</p>
 			<p>
 				Dans tous les cas, il y aura une Steam Deck et une Nintendo Switch. Vous pouvez amener votre
