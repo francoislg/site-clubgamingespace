@@ -87,7 +87,7 @@
 			Soirée de Gaming
 		{/snippet}
 		{#snippet children()}
-			<p>La prochaine soirée sera le <strong>jeudi 21 mars</strong>, de 18h30 à 21h.</p>
+			<p>La prochaine soirée sera le <strong>jeudi 4 avril</strong>, de 18h30 à 21h.</p>
 			<p>Vous pouvez suggérer une activité, ou venir sur place pour décider</p>
 			<p>
 				Dans tous les cas, il y aura une Steam Deck et une Nintendo Switch. Vous pouvez amener votre
