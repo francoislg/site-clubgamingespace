@@ -9,7 +9,7 @@
 	import type { ActionData } from './$types.js';
 	import { URLs } from '$lib/urls.js';
 	import Section from '$lib/Section.svelte';
-	import WarningBanner from '$lib/WarningBanner.svelte';
+	import CoolBanner from '$lib/CoolBanner.svelte';
 	import { avantLeJourMeme } from '$lib/date.js';
 	import Suggestion from '$lib/Suggestion.svelte';
 
@@ -31,16 +31,14 @@
 <div class="flex flex-col items-center gap-4">
 	<h1 class="text-center {sHeaders.h1()}">Club de Gaming de L'Espace</h1>
 
-	<!-- <WarningBanner>
-		{#snippet warning()}
-			{#if avantLeJourMeme(new Date('2024-02-29 00:00:00'))}
-				L'activité du 29 février aura lieu exceptionnellement le *27 février*. Aussi, il n'y aura
-				pas de soirée le 14 mars.
-			{:else}
-				Il n'y aura exceptionnellement pas de soirée le 14 mars.
-			{/if}
-		{/snippet}
-	</WarningBanner> -->
+	{#if avantLeJourMeme(new Date('2024-04-19 00:00:00'))}
+		<CoolBanner>
+			{#snippet text()}
+				Un tournoi de Super Smash Bros Ultimate aura lieu le 20 avril. Voir plus bas pour
+				l'inscription.
+			{/snippet}
+		</CoolBanner>
+	{/if}
 
 	<Section>
 		{#snippet title()}
@@ -115,6 +113,15 @@
 			Inscriptions
 		{/snippet}
 		{#snippet children()}
+			<Inscription lien="https://forms.gle/SsisqEadjCaBgAvTA">
+				{#snippet title()}
+					Tournoi de Super Smash Bros Ultimate
+				{/snippet}
+				{#snippet texte()}
+					Le tournoi aura lieu le 20 avril, à la bibliothèque de Dolbeau. C'est un tournoi 1v1, 3
+					vies, sans objets.
+				{/snippet}
+			</Inscription>
 			<Inscription lien="https://forms.gle/umPSqusmS3XmeMwy5">
 				{#snippet title()}
 					Sondage de direction pour le club
@@ -124,6 +131,7 @@
 					vous pouvez suggérer des activités, et aussi pour recevoir des communications par le club.
 				{/snippet}
 			</Inscription>
+			+
 		{/snippet}
 	</Section>
 
