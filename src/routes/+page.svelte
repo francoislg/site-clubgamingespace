@@ -34,8 +34,9 @@
 	{#if avantLeJourMeme(new Date('2024-04-19 00:00:00'))}
 		<CoolBanner>
 			{#snippet text()}
-				Un tournoi de Super Smash Bros Ultimate aura lieu le 20 avril. Voir plus bas pour
-				l'inscription.
+				<p>🏆 Un tournoi de Super Smash Bros Ultimate aura lieu le 20 avril. 🏆</p>
+				<p>💰 Prix à gagner pour le top 3 💰</p>
+				<p>Voir plus bas pour l'inscription.</p>
 			{/snippet}
 		</CoolBanner>
 	{/if}
@@ -55,7 +56,7 @@
 				</li>
 				<li>
 					Des activités spéciales qui demanderont une inscription (comme l'atelier d'Introduction à
-					la Réalité Virtuelle), à l'occasion.
+					la Réalité Virtuelle, ou les tournois), à l'occasion.
 				</li>
 			</ul>
 			<p>
@@ -118,8 +119,15 @@
 					Tournoi de Super Smash Bros Ultimate
 				{/snippet}
 				{#snippet texte()}
-					Le tournoi aura lieu le 20 avril, à la bibliothèque de Dolbeau. C'est un tournoi 1v1, 3
-					vies, sans objets.
+					<p class="pb-2">
+						Le tournoi aura lieu le 20 avril, à la bibliothèque de Dolbeau. C'est un tournoi 1v1, 3
+						vies, sans objets.
+					</p>
+					<ul class="pl-4">
+						<li>🥇 1ière place: 75$</li>
+						<li>🥈 2ième place: 50$</li>
+						<li>🥉 3ième place: 25$</li>
+					</ul>
 				{/snippet}
 			</Inscription>
 			<Inscription lien="https://forms.gle/umPSqusmS3XmeMwy5">

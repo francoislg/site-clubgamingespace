@@ -7,7 +7,9 @@
 </script>
 
 {#if text}
-	<div class="bg-green-100 border-green-300 border rounded-lg px-8 py-4 font-bold">
-		🏆 {@render text()} 🏆
+	<div
+		class="bg-green-100 border-green-300 border rounded-lg px-8 py-4 font-bold text-center flex flex-col gap-2"
+	>
+		{@render text()}
 	</div>
 {/if}
