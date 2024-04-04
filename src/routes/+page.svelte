@@ -140,7 +140,7 @@
 	<div class="text-center flex flex-col items-center gap-2">
 		<img class="inline-block" src="/map.png" width={64} height={64} alt="carte" />
 		<div>
-			Situé à la Bibliothère de Dolbeau, au
+			Situé à la Bibliothèque de Dolbeau, au
 			<Link href="https://maps.app.goo.gl/K7TyigiHTsHwM2xd7">
 				<span class="whitespace-nowrap"> 175 4e Av, </span>
 				<span class="whitespace-nowrap"> Dolbeau-Mistassini, </span>
