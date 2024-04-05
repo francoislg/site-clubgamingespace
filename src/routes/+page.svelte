@@ -48,16 +48,15 @@
 		{#snippet children()}
 			<p>
 				Le Club de Gaming de L'Espace a pour but regrouper les gamers de Dolbeau-Mistassini autour
-				d'activités de gaming. Il organisera:
+				d'activités de gaming. Il s'occupe:
 			</p>
 			<ul class="list-disc list-inside">
+				<li>De chapeauter les activités libres, sur demande, en soir de semaine.</li>
 				<li>
-					Des soirées récurrentes «portes ouvertes» dont l'activité changera de semaine en semaine.
+					D'organiser des activités (par exemple, l'atelier d'Introduction à la Réalité Virtuelle,
+					ou les tournois).
 				</li>
-				<li>
-					Des activités spéciales qui demanderont une inscription (comme l'atelier d'Introduction à
-					la Réalité Virtuelle, ou les tournois), à l'occasion.
-				</li>
+				<li>D'offrir de l'aide pour l'organisation d'activités reliées au Gaming</li>
 			</ul>
 			<p>
 				Le club est ouvert aux 13 ans et plus. Suivez le <a class="underline" href="#calendrier"
@@ -83,31 +82,27 @@
 
 	<Section>
 		{#snippet title()}
-			Soirée de Gaming
+			Soirée de Gaming (sur demande)
 		{/snippet}
 		{#snippet children()}
-			<p>La prochaine soirée sera le <strong>jeudi 4 avril</strong>, de 18h30 à 21h.</p>
-			<p>Vous pouvez suggérer une activité, ou venir sur place pour décider</p>
 			<p>
-				Dans tous les cas, il y aura une Steam Deck et une Nintendo Switch. Vous pouvez amener votre
-				équipement
+				Il est possible d'utiliser les locaux de l'Espace en soir de semaine pour jouer à des jeux
+				vidéos, sur la télévision commune.
 			</p>
-			<p class="text-sm">
-				📅 À noter que l'activité aura lieu 1 semaine sur 2, le jeudi, de 18h30 à 21h.
+			<p>
+				Il suffit de demander dans la chaîne <a
+					class="text-green-900 underline"
+					href="https://discord.com/channels/1199055808223248384/1199058061214617722">#soirées</a
+				> et nous trouverons un soir convenable, selon les disponibilités des organisateurs
 			</p>
+			<p>
+				Une Steam Deck et une Nintendo Switch sont à la disposition, selon l'organisateur présent.
+				Vous pouvez aussi amener votre matériel.
+			</p>
+			<p>Pour suggérer une activité en soirée, remplir la boîte suivante:</p>
 			<Suggestion votedFor={form?.votedFor?.['suggestion'].toString()} />
 		{/snippet}
 	</Section>
-	<!-- 
-	<Section>
-		{#snippet title()}
-			Soirée de Gaming à venir
-		{/snippet}
-		{#snippet children()}
-			<p>Vous pouvez suggérer une activité pour la prochaine activité</p>
-			<Suggestion votedFor={form?.votedFor?.['suggestion'].toString()} />
-		{/snippet}
-	</Section> -->
 
 	<Section>
 		{#snippet title()}
