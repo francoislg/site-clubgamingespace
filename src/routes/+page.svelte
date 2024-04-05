@@ -134,7 +134,6 @@
 					vous pouvez suggérer des activités, et aussi pour recevoir des communications par le club.
 				{/snippet}
 			</Inscription>
-			+
 		{/snippet}
 	</Section>
 
