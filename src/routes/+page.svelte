@@ -109,22 +109,6 @@
 			Inscriptions
 		{/snippet}
 		{#snippet children()}
-			<Inscription lien="https://forms.gle/SsisqEadjCaBgAvTA">
-				{#snippet title()}
-					Tournoi de Super Smash Bros Ultimate
-				{/snippet}
-				{#snippet texte()}
-					<p class="pb-2">
-						Le tournoi aura lieu le 20 avril, à la bibliothèque de Dolbeau. C'est un tournoi 1v1, 3
-						vies, sans objets.
-					</p>
-					<ul class="pl-4">
-						<li>🥇 1ière place: 75$</li>
-						<li>🥈 2ième place: 50$</li>
-						<li>🥉 3ième place: 25$</li>
-					</ul>
-				{/snippet}
-			</Inscription>
 			<Inscription lien="https://forms.gle/umPSqusmS3XmeMwy5">
 				{#snippet title()}
 					Sondage de direction pour le club
