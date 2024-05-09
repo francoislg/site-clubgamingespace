@@ -31,15 +31,15 @@
 <div class="flex flex-col items-center gap-4">
 	<h1 class="text-center {sHeaders.h1()}">Club de Gaming de L'Espace</h1>
 
-	{#if avantLeJourMeme(new Date('2024-04-19 00:00:00'))}
-		<CoolBanner>
-			{#snippet text()}
-				<p>🏆 Un tournoi de Super Smash Bros Ultimate aura lieu le 20 avril. 🏆</p>
-				<p>💰 Prix à gagner pour le top 3 💰</p>
-				<p>Voir plus bas pour l'inscription.</p>
-			{/snippet}
-		</CoolBanner>
-	{/if}
+	<CoolBanner>
+		{#snippet text()}
+			<p>🏃‍♂️ Tu es un <b>SPEEDRUNNER</b> de jeux? 🏃‍♂️</p>
+			<p>Le club prévoit un marathon de Speedrun et récolte des noms de participants</p>
+			<p>
+				<Link href="https://forms.gle/RLWgXA1JdBZGmr8g9">Inscrivez-vous ici</Link>
+			</p>
+		{/snippet}
+	</CoolBanner>
 
 	<Section>
 		{#snippet title()}
@@ -116,6 +116,19 @@
 				{#snippet texte()}
 					Ce sondage a pour but de récolter de l'information sur les participants. C'est ici que
 					vous pouvez suggérer des activités, et aussi pour recevoir des communications par le club.
+				{/snippet}
+			</Inscription>
+			<Inscription lien="https://forms.gle/RLWgXA1JdBZGmr8g9">
+				{#snippet title()}
+					Speedrunners de la région
+				{/snippet}
+				{#snippet texte()}
+					<p>Le club aimerait organiser un Marathon de Speedrunning à l'Espace.</p>
+					<p>
+						Pour déterminer si l'activité est possible, il nous faut assez de volontaires pour
+						participer à l'événement.
+					</p>
+					<p>Voir le formulaire pour plus de détails</p>
 				{/snippet}
 			</Inscription>
 		{/snippet}
