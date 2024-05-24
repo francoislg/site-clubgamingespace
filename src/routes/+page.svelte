@@ -121,11 +121,11 @@
 			</p>
 			<p>
 				<FlagQcInline /> Il y aura une grande sélection de chansons connues, et notamment, plus de 15
-				classiques Québécois crées pour le jeu par la communauté, incluant:
+				classiques Québécois créés pour le jeu par la communauté, incluant:
 			</p>
 			<ul class="list-disc list-inside">
 				<li>Bobépine - Plume Latraverse</li>
-				<li>Hawaienne- Les Trois Accords</li>
+				<li>Hawaïenne - Les Trois Accords</li>
 				<li>Les Chats Sauvages - Marjo</li>
 				<li>Le générique de Dans Une Galaxie Près de Chez Vous (vous avez bien lu !)</li>
 			</ul>
