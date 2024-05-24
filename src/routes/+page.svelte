@@ -12,6 +12,7 @@
 	import CoolBanner from '$lib/CoolBanner.svelte';
 	import { avantLeJourMeme } from '$lib/date.js';
 	import Suggestion from '$lib/Suggestion.svelte';
+	import FlagQcInline from '$lib/FlagQCInline.svelte';
 
 	export let form: ActionData;
 </script>
@@ -40,6 +41,23 @@
 			</p>
 		{/snippet}
 	</CoolBanner>
+
+	{#if avantLeJourMeme(new Date('2024-06-09'))}
+		<CoolBanner>
+			{#snippet text()}
+				<p>🎸 Avis aux amateurs de <b>ROCK BAND</b> et <b>GUITAR HERO</b> 🥁</p>
+				<p>
+					Le club organise une journée Rock Band au <Link
+						href="https://www.facebook.com/microbrasserielecoureurdesbois">Coureur des Bois</Link
+					> ce 8 juin 🤘
+				</p>
+				<p>
+					<FlagQcInline /> PLUS DE 15 CHANSONS QUÉBÉCOISES DISPONIBLES ! <FlagQcInline />
+				</p>
+				<p>Voir plus bas pour les détails</p>
+			{/snippet}
+		</CoolBanner>
+	{/if}
 
 	<Section>
 		{#snippet title()}
@@ -82,12 +100,55 @@
 
 	<Section>
 		{#snippet title()}
+			Journée Rock Band du 8 juin
+		{/snippet}
+		{#snippet children()}
+			<p>
+				Le 8 juin, en après-midi jusqu'en soirée, au deuxième étage de la <Link
+					href="https://www.facebook.com/microbrasserielecoureurdesbois"
+					>Microbrasserie le Coureur des bois
+				</Link>, aura lieu une journée Rock Band avec les instruments suivants, pour un total de 7
+				joueurs:
+			</p>
+			<ul class="list-disc list-inside">
+				<li>🎸 2 guitares</li>
+				<li>🥁 Un drum</li>
+				<li>🎹 Un clavier "keytar"</li>
+				<li>🎤 3 micros pour du Karaoké avec harmonies</li>
+			</ul>
+			<p>
+				Pas de réservations, il suffit de venir sur place et prendre un instrument qui vous plaît.
+			</p>
+			<p>
+				<FlagQcInline /> Il y aura une grande sélection de chansons connues, et notamment, plus de 15
+				classiques Québécois créés pour le jeu par la communauté, incluant:
+			</p>
+			<ul class="list-disc list-inside">
+				<li>Bobépine - Plume Latraverse</li>
+				<li>Hawaïenne - Les Trois Accords</li>
+				<li>Les Chats Sauvages - Marjo</li>
+				<li>Le générique de Dans Une Galaxie Près de Chez Vous (vous avez bien lu !)</li>
+			</ul>
+			<p>Ouvert aux débutants et experts de toutes sortes !</p>
+			<p>🎸🥁🎹🎤 Venez ROCKER en groupe ce 8 juin 🤘</p>
+		{/snippet}
+		{#snippet image()}
+			<img
+				class="overflow-hidden rounded-lg"
+				src="/Rock Band 3 Deluxe Cover.jpg"
+				alt="Couverture de Rock Band 3"
+			/>
+		{/snippet}
+	</Section>
+
+	<Section>
+		{#snippet title()}
 			Soirée de Gaming (sur demande)
 		{/snippet}
 		{#snippet children()}
 			<p>
 				Il est possible d'utiliser les locaux de l'Espace en soir de semaine pour jouer à des jeux
-				vidéos, sur la télévision commune.
+				vidéos sur la télévision commune, ou à des jeux de société.
 			</p>
 			<p>
 				Il suffit de demander dans la chaîne <a
