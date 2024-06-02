@@ -47,8 +47,10 @@
 			{#snippet text()}
 				<p>🎸 Avis aux amateurs de <b>ROCK BAND</b> et <b>GUITAR HERO</b> 🥁</p>
 				<p>
-					Le club organise une journée Rock Band au <Link
-						href="https://www.facebook.com/microbrasserielecoureurdesbois">Coureur des Bois</Link
+					Le club organise <Link href="https://www.facebook.com/events/1127629601782697"
+						>une journée Rock Band</Link
+					> au <Link href="https://www.facebook.com/microbrasserielecoureurdesbois"
+						>Coureur des Bois</Link
 					> ce 8 juin 🤘
 				</p>
 				<p>
@@ -131,6 +133,11 @@
 			</ul>
 			<p>Ouvert aux débutants et experts de toutes sortes !</p>
 			<p>🎸🥁🎹🎤 Venez ROCKER en groupe ce 8 juin 🤘</p>
+			<p>
+				<Link href="https://www.facebook.com/events/1127629601782697"
+					>Cliquez ici pour voir l'évenement</Link
+				>
+			</p>
 		{/snippet}
 		{#snippet image()}
 			<img
