@@ -11,8 +11,8 @@
 	<h3 class="{sHeaders.h3()} p-4 text-center">
 		{@render title()}
 	</h3>
-	<div class="flex w-full justify-between gap-8 flex-wrap sm:flex-nowrap">
-		<div class="flex flex-col gap-2">
+	<div class="flex w-full justify-between flex-wrap gap-8 sm:flex-nowrap">
+		<div class="flex flex-col gap-2 w-full">
 			{@render children()}
 		</div>
 		{#if image}
