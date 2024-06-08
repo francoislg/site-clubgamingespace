@@ -94,9 +94,6 @@
 	</div>
 
 	<div class={sSectionContainer()}>
-		{#if form}
-			<div in:fade>Vous avez voté pour: {form?.choice}</div>
-		{/if}
 		<form
 			class="flex-1 text-center flex flex-col gap-2"
 			method="POST"
@@ -109,6 +106,9 @@
 				};
 			}}
 		>
+			{#if form}
+				<div in:fade>Vous avez voté pour: {form?.choice}</div>
+			{/if}
 			<input class="hidden" name="voteFor" value="Rock Band" />
 			<input class="hidden" name="choice" value={choix} />
 			<input
