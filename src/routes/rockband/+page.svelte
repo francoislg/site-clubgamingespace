@@ -59,7 +59,7 @@
 			Artiste ou Chanson:
 		{/snippet}
 		<label class="flex flex-wrap items-center gap-4">
-			<input class="{sInput()} w-full" type="text" bind:value={filter} />
+			<input class="{sInput()} w-full" type="text" bind:value={filter} placeholder="Chercher" />
 		</label>
 		<div class="flex items-center justify-between flex-wrap gap-2">
 			<label class="{sCheckbox()} flex-1 sm:whitespace-nowrap">
@@ -75,22 +75,21 @@
 	<div class="flex flex-col flex-1 h-full gap-4 overflow-hidden relative {sSectionContainer()}">
 		<h3 class="{sHeaders.h3()} text-center">Chansons ({toRender.length})</h3>
 		<div class="flex-1 flex flex-col gap-1 relative overflow-y-auto" bind:this={scrollable}>
-			{#each toRender as [artiste, chanson] (artiste + chanson)}
-				{@const choixLabel = `${chanson} - ${artiste}`}
+			{#each toRender as [chanson, artiste] (artiste + chanson)}
+				{@const choixLabel = `${chanson} (${artiste})`}
 				<button
-					class="{sButton()} w-full flex gap-2"
-					class:bg-green-500={choix === choixLabel}
+					class="{sButton()} w-full flex justify-between gap-2"
+					class:bg-green-400={choix === choixLabel}
 					onclick={() => (choix = choixLabel)}
 				>
-					<div class="font-bold">{artiste}</div>
-					-
-					<div>{chanson}</div>
+					<div class="font-bold text-left">{chanson}</div>
+					<div class="text-left text-sm">{artiste}</div>
 				</button>
 			{/each}
 		</div>
 		<button
-			class="absolute bottom-8 right-12 size-2 rounded-full text-xs bg-green-700 p-4 flex items-center justify-center"
-			onclick={scrollToTop}>⬆️</button
+			class="absolute bottom-8 right-12 size-2 rounded-full bg-green-900 text-white p-4 flex items-center justify-center"
+			onclick={scrollToTop}>⬆</button
 		>
 	</div>
 
@@ -112,10 +111,13 @@
 		>
 			<input class="hidden" name="voteFor" value="Rock Band" />
 			<input class="hidden" name="choice" value={choix} />
-			<label class="flex flex-wrap items-center gap-4" class:hidden={!!form}>
-				Entrez votre nom:
-				<input class="{sInput()} w-full sm:w-auto" name="name" bind:value={nom} />
-			</label>
+			<input
+				class="{sInput()} w-full sm:w-auto"
+				class:hidden={!!form}
+				name="name"
+				bind:value={nom}
+				placeholder="Entrez votre nom"
+			/>
 
 			<button
 				class="w-full h-full {sButton()}"
@@ -127,7 +129,7 @@
 				{:else if !choix}
 					🗳️ Aucune chanson choisie
 				{:else}
-					🗳️ {choix}
+					<span class="truncate">🗳️ {choix}</span>
 				{/if}
 			</button>
 		</form>
