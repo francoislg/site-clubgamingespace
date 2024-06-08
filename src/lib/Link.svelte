@@ -7,7 +7,7 @@
 		href,
 		class: classes,
 		children,
-		icon = 'external'
+		icon = 'external',
 	} = $props<{
 		href: string;
 		class?: string;
@@ -16,7 +16,7 @@
 	}>();
 </script>
 
-<a {href} class="{classes} text-green-900 hover:text-green-700" target="_blank">
+<a {href} class="{classes} text-green-900 hover:text-green-700" target={href.startsWith("/") ? '' : '_blank'}>
 	<TextWithInlineIcon {icon}>
 		<span class="underline">{@render children()}</span>
 	</TextWithInlineIcon>

@@ -3,7 +3,8 @@
 	import { fade } from 'svelte/transition';
 	import { sButton } from './styles/button';
 
-	let { voteFor, choices, votedFor } = $props<{
+	let { disabled, voteFor, choices, votedFor } = $props<{
+		disabled?: boolean;
 		voteFor: string;
 		choices: string[];
 		votedFor?: string;
@@ -18,7 +19,7 @@
 			<form out:fade class="flex-1 text-center" method="POST" use:enhance>
 				<input class="hidden" name="voteFor" value={voteFor} />
 				<input class="hidden" name="choice" value={choice} />
-				<button class="w-full h-full {sButton()}" formaction="?/vote">
+				<button class="w-full h-full {sButton()}" {disabled} formaction="?/vote">
 					🗳️ {choice}
 				</button>
 			</form>
