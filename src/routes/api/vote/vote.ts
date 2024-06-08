@@ -1,7 +1,7 @@
 import { JWT } from 'google-auth-library';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 
-export async function vote(voteFor: string, choice: string) {
+export async function vote(voteFor: string, choice: string, name?: string) {
 	const serviceAccountAuth = new JWT({
 		email: import.meta.env.VITE_GOOGLE_SERVICE_ACCOUNT_EMAIL || '',
 		key: import.meta.env.VITE_GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n') || '',
@@ -18,7 +18,7 @@ export async function vote(voteFor: string, choice: string) {
 		throw new Error(`Aucun vote pour ${voteFor}`);
 	}
 
-	await sheet.addRow([new Date(), choice]);
+	await sheet.addRow([new Date(), choice, name || '']);
 
 	return true;
 }

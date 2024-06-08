@@ -1,11 +1,10 @@
 <script lang="ts">
 	import Calendrier from '$lib/Calendrier.svelte';
-	import { sHeaders } from '../lib/styles/headers.js';
-	import Inscription from '../lib/Inscription.svelte';
+	import { sHeaders } from '$lib/styles/headers.js';
+	import Inscription from '$lib/Inscription.svelte';
 	import Footer from './Footer.svelte';
 	import Link from '$lib/Link.svelte';
 	import { page } from '$app/stores';
-	import Vote from '$lib/Vote.svelte';
 	import type { ActionData } from './$types.js';
 	import { URLs } from '$lib/urls.js';
 	import Section from '$lib/Section.svelte';
@@ -55,6 +54,9 @@
 				</p>
 				<p>
 					<FlagQcInline /> PLUS DE 15 CHANSONS QUÉBÉCOISES DISPONIBLES ! <FlagQcInline />
+				</p>
+				<p>
+					Vous êtes déjà sur les lieux? <Link href="/rockband">Cliquez ici</Link>
 				</p>
 				<p>Voir plus bas pour les détails</p>
 			{/snippet}

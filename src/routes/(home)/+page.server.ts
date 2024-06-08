@@ -1,5 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import { vote } from './api/vote/vote.js';
+import { vote } from '../api/vote/vote.js';
 
 export const actions = {
 	vote: async ({ request }) => {
