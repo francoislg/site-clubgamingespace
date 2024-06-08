@@ -66,9 +66,7 @@
 				Québécois?
 				<input type="checkbox" bind:checked={qc} />
 			</label>
-			<button class="{sButton()} flex-1" disabled={!hasFilters} onclick={reset}>
-				Remettre à 0
-			</button>
+			<button class="{sButton()} flex-1" disabled={!hasFilters} onclick={reset}> Effacer </button>
 		</div>
 	</Section>
 
