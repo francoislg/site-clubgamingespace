@@ -9,9 +9,10 @@
 	import { URLs } from '$lib/urls.js';
 	import Section from '$lib/Section.svelte';
 	import CoolBanner from '$lib/CoolBanner.svelte';
-	import { avantLeJourMeme } from '$lib/date.js';
+	import { avantLeJourMeme, exactementLeJour } from '$lib/date.js';
 	import Suggestion from '$lib/Suggestion.svelte';
 	import FlagQcInline from '$lib/FlagQCInline.svelte';
+	import RockBand from '$lib/activites/RockBand.svelte';
 
 	export let form: ActionData;
 </script>
@@ -40,6 +41,36 @@
 			</p>
 		{/snippet}
 	</CoolBanner>
+
+	{#if avantLeJourMeme(new Date('2025-03-14 00:00:00'))}
+		<CoolBanner>
+			{#snippet text()}
+				<p>🎸 Avis aux amateurs de <b>ROCK BAND</b> et <b>GUITAR HERO</b> 🥁</p>
+				<p>
+					Le club organise
+					<!-- 
+					<Link href="https://www.facebook.com/events/1127629601782697">une journée Rock Band</Link>
+					-->
+					une journée Rock Band au <Link
+						href="https://www.facebook.com/microbrasserielecoureurdesbois">Coureur des Bois</Link
+					> ce 14 mars 🤘
+				</p>
+				<p>
+					<FlagQcInline /> PLUS DE 20 CHANSONS QUÉBÉCOISES DISPONIBLES ! <FlagQcInline />
+				</p>
+				{#if exactementLeJour(new Date('2025-03-12 00:00:00'))}
+					<p>
+						Vous êtes déjà sur les lieux? <Link href="/rockband">Cliquez ici</Link>
+					</p>
+				{:else}
+					<p>
+						Vous voulez la liste de chansons? <Link href="/rockband">Cliquez ici</Link>
+					</p>
+				{/if}
+				<p>Voir plus bas pour les détails</p>
+			{/snippet}
+		</CoolBanner>
+	{/if}
 
 	<Section>
 		{#snippet title()}
@@ -79,6 +110,8 @@
 			</p>
 		{/snippet}
 	</Section>
+
+	<RockBand />
 
 	<Section>
 		{#snippet title()}
