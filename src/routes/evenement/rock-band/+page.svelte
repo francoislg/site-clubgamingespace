@@ -15,6 +15,6 @@
 	<meta property="og:image:height" content="630" />
 </svelte:head>
 
-<div class="flex flex-col gap-2 sm:gap-8 h-full">
+<div class="flex flex-col gap-2 sm:gap-8">
 	<RockBand />
 </div>
