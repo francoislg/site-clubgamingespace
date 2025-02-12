@@ -8,6 +8,7 @@
 	import { sHeaders } from '$lib/styles/headers';
 	import { sInput } from '$lib/styles/input';
 	import { fade } from 'svelte/transition';
+	import { page } from '$app/stores';
 
 	const { data, form } = $props();
 
@@ -53,6 +54,18 @@
 		scrollable.scrollTo({ top: 0 });
 	}
 </script>
+
+<svelte:head>
+	<title>Liste de chansons pour Rock Band</title>
+	<meta property="og:title" content="Liste de chansons pour Rock Band" />
+	<meta
+		property="og:description"
+		content="Liste de chansons pour l'activité Rock Band au Coureur des Bois, organisé par le Club de Gaming de L'Espace"
+	/>
+	<meta property="og:image" content="{$page.url.origin}/banniere.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+</svelte:head>
 
 <div class="flex flex-col gap-2 sm:gap-8 h-full">
 	<Section class="flex-0">
