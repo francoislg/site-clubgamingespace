@@ -10,3 +10,9 @@ const leJourMeme = new Date(maintenant.valueOf() - UN_JOUR);
 export function avantLeJourMeme(dateLimite: Date) {
 	return dateLimite > leJourMeme;
 }
+
+export function exactementLeJour(dateLimite: Date) {
+	return (
+		dateLimite.getMonth() === maintenant.getMonth() && dateLimite.getDate() === maintenant.getDate()
+	);
+}

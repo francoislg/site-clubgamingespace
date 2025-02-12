@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { exactementLeJour } from '$lib/date.js';
 	import Section from '$lib/Section.svelte';
 	import { sButton } from '$lib/styles/button';
 	import { sCheckbox } from '$lib/styles/checkbox.js';
@@ -7,6 +8,7 @@
 	import { sHeaders } from '$lib/styles/headers';
 	import { sInput } from '$lib/styles/input';
 	import { fade } from 'svelte/transition';
+	import { page } from '$app/stores';
 
 	const { data, form } = $props();
 
@@ -24,7 +26,7 @@
 		data.tounes
 			.filter(([titre, artiste, quebec]) => {
 				if (!titre) return false;
-				if (qc && quebec !== 'Oui') {
+				if (qc && quebec !== 'Oui' && quebec !== 'Nouvelle') {
 					return false;
 				}
 				if (
@@ -53,6 +55,18 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Liste de chansons pour Rock Band</title>
+	<meta property="og:title" content="Liste de chansons pour Rock Band" />
+	<meta
+		property="og:description"
+		content="Liste de chansons pour l'activité Rock Band au Coureur des Bois, organisé par le Club de Gaming de L'Espace"
+	/>
+	<meta property="og:image" content="{$page.url.origin}/banniere.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+</svelte:head>
+
 <div class="flex flex-col gap-2 sm:gap-8 h-full">
 	<Section class="flex-0">
 		{#snippet title()}
@@ -73,14 +87,21 @@
 	<div class="flex flex-col flex-1 h-full gap-4 overflow-hidden relative {sSectionContainer()}">
 		<h3 class="{sHeaders.h3()} text-center">Chansons ({toRender.length})</h3>
 		<div class="flex-1 flex flex-col gap-1 relative overflow-y-auto" bind:this={scrollable}>
-			{#each toRender as [chanson, artiste] (artiste + chanson)}
+			{#each toRender as [chanson, artiste, quebec] (artiste + chanson)}
 				{@const choixLabel = `${chanson} (${artiste})`}
 				<button
 					class="{sButton()} w-full flex justify-between gap-2"
 					class:bg-green-400={choix === choixLabel}
 					onclick={() => (choix = choixLabel)}
 				>
-					<div class="font-bold text-left">{chanson}</div>
+					<div class="font-bold text-left flex gap-1">
+						<div>
+							{chanson}
+						</div>
+						{#if quebec === 'Nouvelle'}
+							<div class="text-green-900/80 text-sm">(nouvelle !)</div>
+						{/if}
+					</div>
 					<div class="text-left text-sm">{artiste}</div>
 				</button>
 			{/each}
@@ -91,45 +112,47 @@
 		>
 	</div>
 
-	<div class={sSectionContainer()}>
-		<form
-			class="flex-1 text-center flex flex-col gap-2"
-			method="POST"
-			use:enhance={() => {
-				formLoading = true;
-				return async ({ update }) => {
-					formLoading = false;
-					choix = '';
-					update({ reset: false });
-				};
-			}}
-		>
-			{#if form}
-				<div in:fade>Vous avez voté pour: {form?.choice}</div>
-			{/if}
-			<input class="hidden" name="voteFor" value="Rock Band" />
-			<input class="hidden" name="choice" value={choix} />
-			<input
-				class="{sInput()} w-full sm:w-auto"
-				class:hidden={!!form}
-				name="name"
-				bind:value={nom}
-				placeholder="Entrez votre nom"
-			/>
-
-			<button
-				class="w-full h-full {sButton()}"
-				disabled={formLoading || !choix || !nom}
-				formaction="?/vote"
+	{#if exactementLeJour(new Date('2025-03-14 00:00:00'))}
+		<div class={sSectionContainer()}>
+			<form
+				class="flex-1 text-center flex flex-col gap-2"
+				method="POST"
+				use:enhance={() => {
+					formLoading = true;
+					return async ({ update }) => {
+						formLoading = false;
+						choix = '';
+						update({ reset: false });
+					};
+				}}
 			>
-				{#if formLoading}
-					🗳️ Envoi en cours...
-				{:else if !choix}
-					🗳️ Aucune chanson choisie
-				{:else}
-					<span class="truncate">🗳️ {choix}</span>
+				{#if form}
+					<div in:fade>Vous avez voté pour: {form?.choice}</div>
 				{/if}
-			</button>
-		</form>
-	</div>
+				<input class="hidden" name="voteFor" value="Rock Band" />
+				<input class="hidden" name="choice" value={choix} />
+				<input
+					class="{sInput()} w-full sm:w-auto"
+					class:hidden={!!form}
+					name="name"
+					bind:value={nom}
+					placeholder="Entrez votre nom"
+				/>
+
+				<button
+					class="w-full h-full {sButton()}"
+					disabled={formLoading || !choix || !nom}
+					formaction="?/vote"
+				>
+					{#if formLoading}
+						🗳️ Envoi en cours...
+					{:else if !choix}
+						🗳️ Aucune chanson choisie
+					{:else}
+						<span class="truncate">🗳️ {choix}</span>
+					{/if}
+				</button>
+			</form>
+		</div>
+	{/if}
 </div>
