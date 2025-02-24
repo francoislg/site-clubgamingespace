@@ -39,10 +39,10 @@
 		<p>Ouvert aux débutants et experts de toutes sortes !</p>
 		<p>🎸🥁🎹🎤 Venez ROCKER en groupe ce 14 mars 🤘</p>
 		<p>
-			Évenement Facebook à venir.
-			<!-- <Link href="https://www.facebook.com/events/1127629601782697"
-                >Cliquez ici pour voir l'évenement</Link
-            > -->
+			<!-- Évenement Facebook à venir. -->
+			<Link href="https://www.facebook.com/events/4038072316517669"
+				>Cliquez ici pour voir l'évenement</Link
+			>
 		</p>
 		<p>
 			<Link href="/rockband">Cliquez ici pour voir la liste de chansons</Link>

@@ -48,11 +48,10 @@
 				<p>🎸 Avis aux amateurs de <b>ROCK BAND</b> et <b>GUITAR HERO</b> 🥁</p>
 				<p>
 					Le club organise
-					<!-- 
-					<Link href="https://www.facebook.com/events/1127629601782697">une journée Rock Band</Link>
-					-->
-					une journée Rock Band au <Link
-						href="https://www.facebook.com/microbrasserielecoureurdesbois">Coureur des Bois</Link
+					<Link href="https://www.facebook.com/events/4038072316517669">une journée Rock Band</Link>
+					au
+					<Link href="https://www.facebook.com/microbrasserielecoureurdesbois"
+						>Coureur des Bois</Link
 					> ce 14 mars 🤘
 				</p>
 				<p>
