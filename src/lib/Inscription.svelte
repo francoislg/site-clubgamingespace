@@ -55,7 +55,7 @@
 		{#if warning}
 			<div class="text-center font-bold">⚠️ {@render warning()} ⚠️</div>
 		{/if}
-		<button class="inline sm:hidden {sButton()}" on:click={toggleHidden}>
+		<button class="inline sm:hidden {sButton()}" onclick={toggleHidden}>
 			{hidden ? 'Voir' : 'Cacher'} les détails</button
 		>
 		<div class:hidden class="sm:block flex flex-col">

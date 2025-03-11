@@ -9,7 +9,7 @@
 </script>
 
 <div class="flex flex-col gap-4 justify-center" id="calendrier">
-	<button class={sButton()} on:click={toggle}>
+	<button class={sButton()} onclick={toggle}>
 		{open ? 'Fermer' : 'Ouvrir'} le calendrier complet
 	</button>
 
