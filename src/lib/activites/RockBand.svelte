@@ -6,15 +6,14 @@
 
 <Section>
 	{#snippet title()}
-		Journée Rock Band du 14 mars
+		Rock Band
 	{/snippet}
 	{#snippet children()}
 		<p>
-			Le 14 mars, de 3h à 11h, au deuxième étage de la <Link
+			Le club peut organiser des soirées Rock Band au deuxième étage de la <Link
 				href="https://www.facebook.com/microbrasserielecoureurdesbois"
 				>Microbrasserie le Coureur des bois
-			</Link>, aura lieu une journée Rock Band avec les instruments suivants, pour un total de 7
-			joueurs:
+			</Link>, avec les instruments suivants, pour un total de 7 joueurs:
 		</p>
 		<ul class="list-disc list-inside">
 			<li>🎸 2 guitares</li>
@@ -22,9 +21,9 @@
 			<li>🎹 Un clavier "keytar"</li>
 			<li>🎤 3 micros pour du Karaoké avec harmonies</li>
 		</ul>
-		<p>
+		<!-- <p>
 			Pas de réservations, il suffit de venir sur place et prendre un instrument qui vous plaît.
-		</p>
+		</p> -->
 		<p>
 			<FlagQcInline /> Il y aura une grande sélection de chansons connues, et notamment, plus de 20 classiques
 			Québécois créés pour le jeu par la communauté, incluant:
@@ -34,16 +33,11 @@
 			<li>Hawaïenne - Les Trois Accords</li>
 			<li>Les Chats Sauvages - Marjo</li>
 			<li>Le pyromane - Karkwa</li>
+			<li>Assis sur mon Tracteur - François Pérusse</li>
 			<li>Le générique de Dans Une Galaxie Près de Chez Vous (vous avez bien lu !)</li>
 		</ul>
-		<p>Ouvert aux débutants et experts de toutes sortes !</p>
-		<p>🎸🥁🎹🎤 Venez ROCKER en groupe ce 14 mars 🤘</p>
-		<p>
-			<!-- Évenement Facebook à venir. -->
-			<Link href="https://www.facebook.com/events/4038072316517669"
-				>Cliquez ici pour voir l'évenement</Link
-			>
-		</p>
+		<!-- <p>Ouvert aux débutants et experts de toutes sortes !</p> -->
+		<!-- <p>🎸🥁🎹🎤 Venez ROCKER en groupe ce 14 mars 🤘</p> -->
 		<p>
 			<Link href="/rockband">Cliquez ici pour voir la liste de chansons</Link>
 		</p>

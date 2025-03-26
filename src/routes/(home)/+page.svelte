@@ -100,7 +100,7 @@
 				>.
 			</p>
 			<p>
-				<a class="text-green-900" href={URLs.discord()}>
+				<a class="text-green-900" href={URLs.discord()} aria-label="Discord">
 					<i class="fa-discord fa-brands fa-2xl"></i>
 				</a>
 				Rejoignez aussi le
