@@ -110,6 +110,29 @@
 		{/snippet}
 	</Section>
 
+	<Section>
+		{#snippet title()}
+			Mario Kart World
+		{/snippet}
+		{#snippet children()}
+			<p>Le club amènera Mario Kart World à l'Espace</p>
+			<p>
+				Pour aider à choisir une date, entrez le formulaire suivant:
+				<a class="text-green-900" href="https://doodle.com/meeting/organize/id/dLWORnpb"
+					>https://doodle.com/meeting/organize/id/dLWORnpb</a
+				>
+			</p>
+		{/snippet}
+
+		{#snippet image()}
+			<img
+				class="overflow-hidden rounded-lg max-w-[200px]"
+				src="/Mario Kart World Cover.png"
+				alt="Couverture de Mario Kart World"
+			/>
+		{/snippet}
+	</Section>
+
 	<RockBand />
 
 	<Section>
